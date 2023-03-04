@@ -1,7 +1,7 @@
-package com.learning.kafkaproduceravro.services.datagenerator;
+package com.learning.kafkaproducer.avro.services.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learning.kafkaproduceravro.model.LineItem;
+import com.learning.kafkaproducer.avro.model.LineItem;
 import org.springframework.stereotype.Service;
 
 import java.io.File;

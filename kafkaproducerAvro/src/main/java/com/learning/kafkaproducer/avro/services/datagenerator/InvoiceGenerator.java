@@ -1,8 +1,8 @@
-package com.learning.kafkaproduceravro.services.datagenerator;
+package com.learning.kafkaproducer.avro.services.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learning.kafkaproduceravro.model.LineItem;
-import com.learning.kafkaproduceravro.model.PosInvoice;
+import com.learning.kafkaproducer.avro.model.LineItem;
+import com.learning.kafkaproducer.avro.model.PosInvoice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +18,9 @@ public class InvoiceGenerator {
 
     private final Random random;
     private final Random numberOfItems;
+
+    private final Random invoiceNumber;
+
     private final PosInvoice[] invoices;
 
 
@@ -35,6 +38,7 @@ public class InvoiceGenerator {
         final ObjectMapper mapper;
         random = new Random();
         numberOfItems = new Random();
+        invoiceNumber = new Random();
         mapper = new ObjectMapper();
         try{
             invoices = mapper.readValue(new File(DATAFILE), PosInvoice[].class);
@@ -51,8 +55,15 @@ public class InvoiceGenerator {
         return numberOfItems.nextInt(4)+1;
     }
 
+    private int getNewInvoiceNumber() {
+        return invoiceNumber.nextInt(99999999) + 99999;
+    }
+
+
     public PosInvoice getNextInvoice(){
         PosInvoice invoice = invoices[getIndex()];
+        invoice.setInvoiceNumber(Integer.toString(getNewInvoiceNumber()));
+        invoice.setCreatedTime(System.currentTimeMillis());
         if(invoice.getDeliveryType().equals("HOME-DELIVERY")) {
             invoice.setDeliveryAddress(addressGenerator.nextAddress());
         }

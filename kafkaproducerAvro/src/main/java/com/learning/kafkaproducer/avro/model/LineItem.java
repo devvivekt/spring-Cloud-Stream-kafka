@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.learning.kafkaproduceravro.model;
+package com.learning.kafkaproducer.avro.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -190,8 +190,8 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new LineItem RecordBuilder.
    * @return A new LineItem RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.LineItem.Builder newBuilder() {
-    return new com.learning.kafkaproduceravro.model.LineItem.Builder();
+  public static LineItem.Builder newBuilder() {
+    return new LineItem.Builder();
   }
 
   /**
@@ -199,8 +199,8 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new LineItem RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.LineItem.Builder newBuilder(com.learning.kafkaproduceravro.model.LineItem.Builder other) {
-    return new com.learning.kafkaproduceravro.model.LineItem.Builder(other);
+  public static LineItem.Builder newBuilder(LineItem.Builder other) {
+    return new LineItem.Builder(other);
   }
 
   /**
@@ -208,8 +208,8 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new LineItem RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.LineItem.Builder newBuilder(com.learning.kafkaproduceravro.model.LineItem other) {
-    return new com.learning.kafkaproduceravro.model.LineItem.Builder(other);
+  public static LineItem.Builder newBuilder(LineItem other) {
+    return new LineItem.Builder(other);
   }
 
   /**
@@ -233,7 +233,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.LineItem.Builder other) {
+    private Builder(LineItem.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.ItemCode)) {
         this.ItemCode = data().deepCopy(fields()[0].schema(), other.ItemCode);
@@ -261,7 +261,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing LineItem instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.LineItem other) {
+    private Builder(LineItem other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.ItemCode)) {
         this.ItemCode = data().deepCopy(fields()[0].schema(), other.ItemCode);
@@ -298,7 +298,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'ItemCode'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder setItemCode(java.lang.String value) {
+    public LineItem.Builder setItemCode(java.lang.String value) {
       validate(fields()[0], value);
       this.ItemCode = value;
       fieldSetFlags()[0] = true;
@@ -318,7 +318,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'ItemCode' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder clearItemCode() {
+    public LineItem.Builder clearItemCode() {
       ItemCode = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -337,7 +337,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'ItemDescription'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder setItemDescription(java.lang.String value) {
+    public LineItem.Builder setItemDescription(java.lang.String value) {
       validate(fields()[1], value);
       this.ItemDescription = value;
       fieldSetFlags()[1] = true;
@@ -357,7 +357,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'ItemDescription' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder clearItemDescription() {
+    public LineItem.Builder clearItemDescription() {
       ItemDescription = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -376,7 +376,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'ItemPrice'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder setItemPrice(java.lang.Double value) {
+    public LineItem.Builder setItemPrice(java.lang.Double value) {
       validate(fields()[2], value);
       this.ItemPrice = value;
       fieldSetFlags()[2] = true;
@@ -396,7 +396,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'ItemPrice' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder clearItemPrice() {
+    public LineItem.Builder clearItemPrice() {
       ItemPrice = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -415,7 +415,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'ItemQty'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder setItemQty(java.lang.Integer value) {
+    public LineItem.Builder setItemQty(java.lang.Integer value) {
       validate(fields()[3], value);
       this.ItemQty = value;
       fieldSetFlags()[3] = true;
@@ -435,7 +435,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'ItemQty' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder clearItemQty() {
+    public LineItem.Builder clearItemQty() {
       ItemQty = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -454,7 +454,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'TotalValue'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder setTotalValue(java.lang.Double value) {
+    public LineItem.Builder setTotalValue(java.lang.Double value) {
       validate(fields()[4], value);
       this.TotalValue = value;
       fieldSetFlags()[4] = true;
@@ -474,7 +474,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'TotalValue' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.LineItem.Builder clearTotalValue() {
+    public LineItem.Builder clearTotalValue() {
       TotalValue = null;
       fieldSetFlags()[4] = false;
       return this;

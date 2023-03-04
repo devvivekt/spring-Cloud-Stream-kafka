@@ -1,7 +1,7 @@
-package com.learning.kafkaproduceravro;
+package com.learning.kafkaproducer.avro;
 
-import com.learning.kafkaproduceravro.services.KafkaProducerService;
-import com.learning.kafkaproduceravro.services.datagenerator.InvoiceGenerator;
+import com.learning.kafkaproducer.avro.services.datagenerator.InvoiceGenerator;
+import com.learning.kafkaproducer.avro.services.KafkaProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;

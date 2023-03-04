@@ -1,8 +1,8 @@
-package com.learning.kafkaproduceravro.services.datagenerator;
+package com.learning.kafkaproducer.avro.services.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
-import com.learning.kafkaproduceravro.model.DeliveryAddress;
+import com.learning.kafkaproducer.avro.model.DeliveryAddress;
 import java.io.File;
 import java.util.Random;
 

@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.learning.kafkaproduceravro.model;
+package com.learning.kafkaproducer.avro.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -190,8 +190,8 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
    * Creates a new DeliveryAddress RecordBuilder.
    * @return A new DeliveryAddress RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.DeliveryAddress.Builder newBuilder() {
-    return new com.learning.kafkaproduceravro.model.DeliveryAddress.Builder();
+  public static DeliveryAddress.Builder newBuilder() {
+    return new DeliveryAddress.Builder();
   }
 
   /**
@@ -199,8 +199,8 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing builder to copy.
    * @return A new DeliveryAddress RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.DeliveryAddress.Builder newBuilder(com.learning.kafkaproduceravro.model.DeliveryAddress.Builder other) {
-    return new com.learning.kafkaproduceravro.model.DeliveryAddress.Builder(other);
+  public static DeliveryAddress.Builder newBuilder(DeliveryAddress.Builder other) {
+    return new DeliveryAddress.Builder(other);
   }
 
   /**
@@ -208,8 +208,8 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing instance to copy.
    * @return A new DeliveryAddress RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.DeliveryAddress.Builder newBuilder(com.learning.kafkaproduceravro.model.DeliveryAddress other) {
-    return new com.learning.kafkaproduceravro.model.DeliveryAddress.Builder(other);
+  public static DeliveryAddress.Builder newBuilder(DeliveryAddress other) {
+    return new DeliveryAddress.Builder(other);
   }
 
   /**
@@ -233,7 +233,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.DeliveryAddress.Builder other) {
+    private Builder(DeliveryAddress.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.AddressLine)) {
         this.AddressLine = data().deepCopy(fields()[0].schema(), other.AddressLine);
@@ -261,7 +261,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing DeliveryAddress instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.DeliveryAddress other) {
+    private Builder(DeliveryAddress other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.AddressLine)) {
         this.AddressLine = data().deepCopy(fields()[0].schema(), other.AddressLine);
@@ -298,7 +298,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'AddressLine'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder setAddressLine(java.lang.String value) {
+    public DeliveryAddress.Builder setAddressLine(java.lang.String value) {
       validate(fields()[0], value);
       this.AddressLine = value;
       fieldSetFlags()[0] = true;
@@ -318,7 +318,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'AddressLine' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder clearAddressLine() {
+    public DeliveryAddress.Builder clearAddressLine() {
       AddressLine = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -337,7 +337,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'City'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder setCity(java.lang.String value) {
+    public DeliveryAddress.Builder setCity(java.lang.String value) {
       validate(fields()[1], value);
       this.City = value;
       fieldSetFlags()[1] = true;
@@ -357,7 +357,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'City' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder clearCity() {
+    public DeliveryAddress.Builder clearCity() {
       City = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -376,7 +376,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'State'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder setState(java.lang.String value) {
+    public DeliveryAddress.Builder setState(java.lang.String value) {
       validate(fields()[2], value);
       this.State = value;
       fieldSetFlags()[2] = true;
@@ -396,7 +396,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'State' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder clearState() {
+    public DeliveryAddress.Builder clearState() {
       State = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -415,7 +415,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'PinCode'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder setPinCode(java.lang.String value) {
+    public DeliveryAddress.Builder setPinCode(java.lang.String value) {
       validate(fields()[3], value);
       this.PinCode = value;
       fieldSetFlags()[3] = true;
@@ -435,7 +435,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'PinCode' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder clearPinCode() {
+    public DeliveryAddress.Builder clearPinCode() {
       PinCode = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -454,7 +454,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'ContactNumber'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder setContactNumber(java.lang.String value) {
+    public DeliveryAddress.Builder setContactNumber(java.lang.String value) {
       validate(fields()[4], value);
       this.ContactNumber = value;
       fieldSetFlags()[4] = true;
@@ -474,7 +474,7 @@ public class DeliveryAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'ContactNumber' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder clearContactNumber() {
+    public DeliveryAddress.Builder clearContactNumber() {
       ContactNumber = null;
       fieldSetFlags()[4] = false;
       return this;

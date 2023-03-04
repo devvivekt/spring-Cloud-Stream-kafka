@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.learning.kafkaproduceravro.model;
+package com.learning.kafkaproducer.avro.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -66,8 +66,8 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
   @Deprecated public java.lang.String CashierID;
   @Deprecated public java.lang.String CustomerType;
   @Deprecated public java.lang.String DeliveryType;
-  @Deprecated public com.learning.kafkaproduceravro.model.DeliveryAddress DeliveryAddress;
-  @Deprecated public java.util.List<com.learning.kafkaproduceravro.model.LineItem> InvoiceLineItems;
+  @Deprecated public com.learning.kafkaproducer.avro.model.DeliveryAddress DeliveryAddress;
+  @Deprecated public java.util.List<LineItem> InvoiceLineItems;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -96,7 +96,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * @param DeliveryAddress The new value for DeliveryAddress
    * @param InvoiceLineItems The new value for InvoiceLineItems
    */
-  public PosInvoice(java.lang.String InvoiceNumber, java.lang.Long CreatedTime, java.lang.Double CustomerCardNo, java.lang.Double TotalAmount, java.lang.Integer NumberOfItems, java.lang.String PaymentMethod, java.lang.Double TaxableAmount, java.lang.Double CGST, java.lang.Double SGST, java.lang.Double CESS, java.lang.String StoreID, java.lang.String PosID, java.lang.String CashierID, java.lang.String CustomerType, java.lang.String DeliveryType, com.learning.kafkaproduceravro.model.DeliveryAddress DeliveryAddress, java.util.List<com.learning.kafkaproduceravro.model.LineItem> InvoiceLineItems) {
+  public PosInvoice(java.lang.String InvoiceNumber, java.lang.Long CreatedTime, java.lang.Double CustomerCardNo, java.lang.Double TotalAmount, java.lang.Integer NumberOfItems, java.lang.String PaymentMethod, java.lang.Double TaxableAmount, java.lang.Double CGST, java.lang.Double SGST, java.lang.Double CESS, java.lang.String StoreID, java.lang.String PosID, java.lang.String CashierID, java.lang.String CustomerType, java.lang.String DeliveryType, com.learning.kafkaproducer.avro.model.DeliveryAddress DeliveryAddress, java.util.List<LineItem> InvoiceLineItems) {
     this.InvoiceNumber = InvoiceNumber;
     this.CreatedTime = CreatedTime;
     this.CustomerCardNo = CustomerCardNo;
@@ -160,8 +160,8 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
     case 12: CashierID = (java.lang.String)value$; break;
     case 13: CustomerType = (java.lang.String)value$; break;
     case 14: DeliveryType = (java.lang.String)value$; break;
-    case 15: DeliveryAddress = (com.learning.kafkaproduceravro.model.DeliveryAddress)value$; break;
-    case 16: InvoiceLineItems = (java.util.List<com.learning.kafkaproduceravro.model.LineItem>)value$; break;
+    case 15: DeliveryAddress = (com.learning.kafkaproducer.avro.model.DeliveryAddress)value$; break;
+    case 16: InvoiceLineItems = (java.util.List<LineItem>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -410,7 +410,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'DeliveryAddress' field.
    * @return The value of the 'DeliveryAddress' field.
    */
-  public com.learning.kafkaproduceravro.model.DeliveryAddress getDeliveryAddress() {
+  public com.learning.kafkaproducer.avro.model.DeliveryAddress getDeliveryAddress() {
     return DeliveryAddress;
   }
 
@@ -418,7 +418,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'DeliveryAddress' field.
    * @param value the value to set.
    */
-  public void setDeliveryAddress(com.learning.kafkaproduceravro.model.DeliveryAddress value) {
+  public void setDeliveryAddress(com.learning.kafkaproducer.avro.model.DeliveryAddress value) {
     this.DeliveryAddress = value;
   }
 
@@ -426,7 +426,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'InvoiceLineItems' field.
    * @return The value of the 'InvoiceLineItems' field.
    */
-  public java.util.List<com.learning.kafkaproduceravro.model.LineItem> getInvoiceLineItems() {
+  public java.util.List<LineItem> getInvoiceLineItems() {
     return InvoiceLineItems;
   }
 
@@ -434,7 +434,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'InvoiceLineItems' field.
    * @param value the value to set.
    */
-  public void setInvoiceLineItems(java.util.List<com.learning.kafkaproduceravro.model.LineItem> value) {
+  public void setInvoiceLineItems(java.util.List<LineItem> value) {
     this.InvoiceLineItems = value;
   }
 
@@ -442,8 +442,8 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new PosInvoice RecordBuilder.
    * @return A new PosInvoice RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.PosInvoice.Builder newBuilder() {
-    return new com.learning.kafkaproduceravro.model.PosInvoice.Builder();
+  public static PosInvoice.Builder newBuilder() {
+    return new PosInvoice.Builder();
   }
 
   /**
@@ -451,8 +451,8 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new PosInvoice RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.PosInvoice.Builder newBuilder(com.learning.kafkaproduceravro.model.PosInvoice.Builder other) {
-    return new com.learning.kafkaproduceravro.model.PosInvoice.Builder(other);
+  public static PosInvoice.Builder newBuilder(PosInvoice.Builder other) {
+    return new PosInvoice.Builder(other);
   }
 
   /**
@@ -460,8 +460,8 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new PosInvoice RecordBuilder
    */
-  public static com.learning.kafkaproduceravro.model.PosInvoice.Builder newBuilder(com.learning.kafkaproduceravro.model.PosInvoice other) {
-    return new com.learning.kafkaproduceravro.model.PosInvoice.Builder(other);
+  public static PosInvoice.Builder newBuilder(PosInvoice other) {
+    return new PosInvoice.Builder(other);
   }
 
   /**
@@ -485,9 +485,9 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
     private java.lang.String CashierID;
     private java.lang.String CustomerType;
     private java.lang.String DeliveryType;
-    private com.learning.kafkaproduceravro.model.DeliveryAddress DeliveryAddress;
-    private com.learning.kafkaproduceravro.model.DeliveryAddress.Builder DeliveryAddressBuilder;
-    private java.util.List<com.learning.kafkaproduceravro.model.LineItem> InvoiceLineItems;
+    private com.learning.kafkaproducer.avro.model.DeliveryAddress DeliveryAddress;
+    private com.learning.kafkaproducer.avro.model.DeliveryAddress.Builder DeliveryAddressBuilder;
+    private java.util.List<LineItem> InvoiceLineItems;
 
     /** Creates a new Builder */
     private Builder() {
@@ -498,7 +498,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.PosInvoice.Builder other) {
+    private Builder(PosInvoice.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.InvoiceNumber)) {
         this.InvoiceNumber = data().deepCopy(fields()[0].schema(), other.InvoiceNumber);
@@ -565,7 +565,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[15] = true;
       }
       if (other.hasDeliveryAddressBuilder()) {
-        this.DeliveryAddressBuilder = com.learning.kafkaproduceravro.model.DeliveryAddress.newBuilder(other.getDeliveryAddressBuilder());
+        this.DeliveryAddressBuilder = com.learning.kafkaproducer.avro.model.DeliveryAddress.newBuilder(other.getDeliveryAddressBuilder());
       }
       if (isValidValue(fields()[16], other.InvoiceLineItems)) {
         this.InvoiceLineItems = data().deepCopy(fields()[16].schema(), other.InvoiceLineItems);
@@ -577,7 +577,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing PosInvoice instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.learning.kafkaproduceravro.model.PosInvoice other) {
+    private Builder(PosInvoice other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.InvoiceNumber)) {
         this.InvoiceNumber = data().deepCopy(fields()[0].schema(), other.InvoiceNumber);
@@ -663,7 +663,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'InvoiceNumber'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setInvoiceNumber(java.lang.String value) {
+    public PosInvoice.Builder setInvoiceNumber(java.lang.String value) {
       validate(fields()[0], value);
       this.InvoiceNumber = value;
       fieldSetFlags()[0] = true;
@@ -683,7 +683,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'InvoiceNumber' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearInvoiceNumber() {
+    public PosInvoice.Builder clearInvoiceNumber() {
       InvoiceNumber = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -702,7 +702,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CreatedTime'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCreatedTime(java.lang.Long value) {
+    public PosInvoice.Builder setCreatedTime(java.lang.Long value) {
       validate(fields()[1], value);
       this.CreatedTime = value;
       fieldSetFlags()[1] = true;
@@ -722,7 +722,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CreatedTime' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCreatedTime() {
+    public PosInvoice.Builder clearCreatedTime() {
       CreatedTime = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -741,7 +741,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CustomerCardNo'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCustomerCardNo(java.lang.Double value) {
+    public PosInvoice.Builder setCustomerCardNo(java.lang.Double value) {
       validate(fields()[2], value);
       this.CustomerCardNo = value;
       fieldSetFlags()[2] = true;
@@ -761,7 +761,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CustomerCardNo' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCustomerCardNo() {
+    public PosInvoice.Builder clearCustomerCardNo() {
       CustomerCardNo = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -780,7 +780,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'TotalAmount'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setTotalAmount(java.lang.Double value) {
+    public PosInvoice.Builder setTotalAmount(java.lang.Double value) {
       validate(fields()[3], value);
       this.TotalAmount = value;
       fieldSetFlags()[3] = true;
@@ -800,7 +800,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'TotalAmount' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearTotalAmount() {
+    public PosInvoice.Builder clearTotalAmount() {
       TotalAmount = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -819,7 +819,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'NumberOfItems'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setNumberOfItems(java.lang.Integer value) {
+    public PosInvoice.Builder setNumberOfItems(java.lang.Integer value) {
       validate(fields()[4], value);
       this.NumberOfItems = value;
       fieldSetFlags()[4] = true;
@@ -839,7 +839,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'NumberOfItems' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearNumberOfItems() {
+    public PosInvoice.Builder clearNumberOfItems() {
       NumberOfItems = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -858,7 +858,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'PaymentMethod'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setPaymentMethod(java.lang.String value) {
+    public PosInvoice.Builder setPaymentMethod(java.lang.String value) {
       validate(fields()[5], value);
       this.PaymentMethod = value;
       fieldSetFlags()[5] = true;
@@ -878,7 +878,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'PaymentMethod' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearPaymentMethod() {
+    public PosInvoice.Builder clearPaymentMethod() {
       PaymentMethod = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -897,7 +897,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'TaxableAmount'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setTaxableAmount(java.lang.Double value) {
+    public PosInvoice.Builder setTaxableAmount(java.lang.Double value) {
       validate(fields()[6], value);
       this.TaxableAmount = value;
       fieldSetFlags()[6] = true;
@@ -917,7 +917,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'TaxableAmount' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearTaxableAmount() {
+    public PosInvoice.Builder clearTaxableAmount() {
       TaxableAmount = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -936,7 +936,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CGST'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCGST(java.lang.Double value) {
+    public PosInvoice.Builder setCGST(java.lang.Double value) {
       validate(fields()[7], value);
       this.CGST = value;
       fieldSetFlags()[7] = true;
@@ -956,7 +956,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CGST' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCGST() {
+    public PosInvoice.Builder clearCGST() {
       CGST = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -975,7 +975,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'SGST'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setSGST(java.lang.Double value) {
+    public PosInvoice.Builder setSGST(java.lang.Double value) {
       validate(fields()[8], value);
       this.SGST = value;
       fieldSetFlags()[8] = true;
@@ -995,7 +995,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'SGST' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearSGST() {
+    public PosInvoice.Builder clearSGST() {
       SGST = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1014,7 +1014,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CESS'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCESS(java.lang.Double value) {
+    public PosInvoice.Builder setCESS(java.lang.Double value) {
       validate(fields()[9], value);
       this.CESS = value;
       fieldSetFlags()[9] = true;
@@ -1034,7 +1034,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CESS' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCESS() {
+    public PosInvoice.Builder clearCESS() {
       CESS = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1053,7 +1053,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'StoreID'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setStoreID(java.lang.String value) {
+    public PosInvoice.Builder setStoreID(java.lang.String value) {
       validate(fields()[10], value);
       this.StoreID = value;
       fieldSetFlags()[10] = true;
@@ -1073,7 +1073,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'StoreID' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearStoreID() {
+    public PosInvoice.Builder clearStoreID() {
       StoreID = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1092,7 +1092,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'PosID'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setPosID(java.lang.String value) {
+    public PosInvoice.Builder setPosID(java.lang.String value) {
       validate(fields()[11], value);
       this.PosID = value;
       fieldSetFlags()[11] = true;
@@ -1112,7 +1112,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'PosID' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearPosID() {
+    public PosInvoice.Builder clearPosID() {
       PosID = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1131,7 +1131,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CashierID'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCashierID(java.lang.String value) {
+    public PosInvoice.Builder setCashierID(java.lang.String value) {
       validate(fields()[12], value);
       this.CashierID = value;
       fieldSetFlags()[12] = true;
@@ -1151,7 +1151,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CashierID' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCashierID() {
+    public PosInvoice.Builder clearCashierID() {
       CashierID = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1170,7 +1170,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'CustomerType'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setCustomerType(java.lang.String value) {
+    public PosInvoice.Builder setCustomerType(java.lang.String value) {
       validate(fields()[13], value);
       this.CustomerType = value;
       fieldSetFlags()[13] = true;
@@ -1190,7 +1190,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'CustomerType' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearCustomerType() {
+    public PosInvoice.Builder clearCustomerType() {
       CustomerType = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1209,7 +1209,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'DeliveryType'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setDeliveryType(java.lang.String value) {
+    public PosInvoice.Builder setDeliveryType(java.lang.String value) {
       validate(fields()[14], value);
       this.DeliveryType = value;
       fieldSetFlags()[14] = true;
@@ -1229,7 +1229,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'DeliveryType' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearDeliveryType() {
+    public PosInvoice.Builder clearDeliveryType() {
       DeliveryType = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1239,7 +1239,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'DeliveryAddress' field.
       * @return The value.
       */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress getDeliveryAddress() {
+    public com.learning.kafkaproducer.avro.model.DeliveryAddress getDeliveryAddress() {
       return DeliveryAddress;
     }
 
@@ -1248,7 +1248,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'DeliveryAddress'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setDeliveryAddress(com.learning.kafkaproduceravro.model.DeliveryAddress value) {
+    public PosInvoice.Builder setDeliveryAddress(com.learning.kafkaproducer.avro.model.DeliveryAddress value) {
       validate(fields()[15], value);
       this.DeliveryAddressBuilder = null;
       this.DeliveryAddress = value;
@@ -1268,12 +1268,12 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'DeliveryAddress' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public com.learning.kafkaproduceravro.model.DeliveryAddress.Builder getDeliveryAddressBuilder() {
+    public com.learning.kafkaproducer.avro.model.DeliveryAddress.Builder getDeliveryAddressBuilder() {
       if (DeliveryAddressBuilder == null) {
         if (hasDeliveryAddress()) {
-          setDeliveryAddressBuilder(com.learning.kafkaproduceravro.model.DeliveryAddress.newBuilder(DeliveryAddress));
+          setDeliveryAddressBuilder(com.learning.kafkaproducer.avro.model.DeliveryAddress.newBuilder(DeliveryAddress));
         } else {
-          setDeliveryAddressBuilder(com.learning.kafkaproduceravro.model.DeliveryAddress.newBuilder());
+          setDeliveryAddressBuilder(com.learning.kafkaproducer.avro.model.DeliveryAddress.newBuilder());
         }
       }
       return DeliveryAddressBuilder;
@@ -1284,7 +1284,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setDeliveryAddressBuilder(com.learning.kafkaproduceravro.model.DeliveryAddress.Builder value) {
+    public PosInvoice.Builder setDeliveryAddressBuilder(com.learning.kafkaproducer.avro.model.DeliveryAddress.Builder value) {
       clearDeliveryAddress();
       DeliveryAddressBuilder = value;
       return this;
@@ -1302,7 +1302,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'DeliveryAddress' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearDeliveryAddress() {
+    public PosInvoice.Builder clearDeliveryAddress() {
       DeliveryAddress = null;
       DeliveryAddressBuilder = null;
       fieldSetFlags()[15] = false;
@@ -1313,7 +1313,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'InvoiceLineItems' field.
       * @return The value.
       */
-    public java.util.List<com.learning.kafkaproduceravro.model.LineItem> getInvoiceLineItems() {
+    public java.util.List<LineItem> getInvoiceLineItems() {
       return InvoiceLineItems;
     }
 
@@ -1322,7 +1322,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'InvoiceLineItems'.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder setInvoiceLineItems(java.util.List<com.learning.kafkaproduceravro.model.LineItem> value) {
+    public PosInvoice.Builder setInvoiceLineItems(java.util.List<LineItem> value) {
       validate(fields()[16], value);
       this.InvoiceLineItems = value;
       fieldSetFlags()[16] = true;
@@ -1342,7 +1342,7 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'InvoiceLineItems' field.
       * @return This builder.
       */
-    public com.learning.kafkaproduceravro.model.PosInvoice.Builder clearInvoiceLineItems() {
+    public PosInvoice.Builder clearInvoiceLineItems() {
       InvoiceLineItems = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1371,9 +1371,9 @@ public class PosInvoice extends org.apache.avro.specific.SpecificRecordBase impl
         if (DeliveryAddressBuilder != null) {
           record.DeliveryAddress = this.DeliveryAddressBuilder.build();
         } else {
-          record.DeliveryAddress = fieldSetFlags()[15] ? this.DeliveryAddress : (com.learning.kafkaproduceravro.model.DeliveryAddress) defaultValue(fields()[15]);
+          record.DeliveryAddress = fieldSetFlags()[15] ? this.DeliveryAddress : (com.learning.kafkaproducer.avro.model.DeliveryAddress) defaultValue(fields()[15]);
         }
-        record.InvoiceLineItems = fieldSetFlags()[16] ? this.InvoiceLineItems : (java.util.List<com.learning.kafkaproduceravro.model.LineItem>) defaultValue(fields()[16]);
+        record.InvoiceLineItems = fieldSetFlags()[16] ? this.InvoiceLineItems : (java.util.List<LineItem>) defaultValue(fields()[16]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

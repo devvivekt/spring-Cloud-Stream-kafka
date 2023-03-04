@@ -1,7 +1,7 @@
-package com.learning.kafka.sample.kafkaproducer.services.datagenerator;
+package com.learning.kafka.kafkaproducer.json.services.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learning.kafka.sample.kafkaproducer.model.LineItem;
+import com.learning.kafka.kafkaproducer.json.model.LineItem;
 import org.springframework.stereotype.Service;
 
 import java.io.File;

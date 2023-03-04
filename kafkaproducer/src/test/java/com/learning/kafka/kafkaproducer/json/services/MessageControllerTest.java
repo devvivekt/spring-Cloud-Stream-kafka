@@ -1,4 +1,4 @@
-package com.learning.kafka.sample.kafkaproducer.services;
+package com.learning.kafka.kafkaproducer.json.services;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

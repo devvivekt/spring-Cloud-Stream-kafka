@@ -1,6 +1,6 @@
-package com.learning.kafka.sample.kafkaproducer.services;
+package com.learning.kafka.kafkaproducer.json.services;
 
-import com.learning.kafka.sample.kafkaproducer.model.PosInvoice;
+import com.learning.kafka.kafkaproducer.json.model.PosInvoice;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

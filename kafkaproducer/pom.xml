@@ -8,10 +8,10 @@
 		<version>2.7.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.learning.kafka.sample</groupId>
-	<artifactId>kafkaproducer</artifactId>
+	<groupId>com.learning.kafkaproducer.json</groupId>
+	<artifactId>kafkaproducerjson</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafkaproducer</name>
+	<name>kafkaproducerjson</name>
 	<description>Kafka Producer</description>
 	<properties>
 		<java.version>11</java.version>

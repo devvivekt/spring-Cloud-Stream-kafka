@@ -1,4 +1,4 @@
-package com.learning.kafka.sample.kafkaproducer.model;
+package com.learning.kafka.kafkaproducer.json.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -39,7 +39,7 @@ public class PosInvoice {
     @JsonProperty("CESS")
     private Double cESS;
     @JsonProperty("DeliveryType")
-    private Double deliveryType;
+    private String deliveryType;
 
     @JsonProperty("DeliveryAddress")
     private DeliveryAddress deliveryAddress;

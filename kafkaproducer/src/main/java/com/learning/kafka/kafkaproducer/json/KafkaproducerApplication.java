@@ -1,8 +1,7 @@
-package com.learning.kafka.sample.kafkaproducer;
+package com.learning.kafka.kafkaproducer.json;
 
-import com.learning.kafka.sample.kafkaproducer.services.KafkaProducerService;
-import com.learning.kafka.sample.kafkaproducer.services.MessageProducer;
-import com.learning.kafka.sample.kafkaproducer.services.datagenerator.InvoiceGenerator;
+import com.learning.kafka.kafkaproducer.json.services.KafkaProducerService;
+import com.learning.kafka.kafkaproducer.json.services.datagenerator.InvoiceGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;

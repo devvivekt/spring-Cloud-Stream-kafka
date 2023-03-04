@@ -1,11 +1,10 @@
-package com.learning.kafka.sample.kafkaproducer.services.datagenerator;
+package com.learning.kafka.kafkaproducer.json.services.datagenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learning.kafka.sample.kafkaproducer.model.DeliveryAddress;
+import com.learning.kafka.kafkaproducer.json.model.DeliveryAddress;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.util.List;
 import java.util.Random;
 
 @Service

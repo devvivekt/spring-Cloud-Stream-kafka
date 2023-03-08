@@ -50,25 +50,4 @@ The following guides illustrate how to use some features concretely:
           process
 
   
-* Kafka Aggregation
-        
-        Aggregation Key
-        Aggregation applies to KStream and KTable
-        Aggregation is only possible after grouping
-        
-        KStream -> groupBy(), groupByKey() --> KGroupedStream
-        KTable --> groupBy()  ----> KGroupedTable
-  * Aggregation Formulas
-        
-        count()
-        reduce()
-        aggregate()
-  * Repartitioning or Shufle/Sort
-    
-        application will created listener thread for each partition, using consumer group
-        appid and consumerid will form the consumer group
-        groupBy will internally trigger a shuffle partitioning so that the non key grouping is handled
-        by single thread, framework will handle automatically , its expensive operation
-        
-      
 

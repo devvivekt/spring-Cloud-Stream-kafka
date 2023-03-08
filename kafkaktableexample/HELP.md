@@ -49,26 +49,5 @@ The following guides illustrate how to use some features concretely:
           transformValues and flatTransformValues
           process
 
-Handling Poison Pills
-  there is the config if we use serializer from framework and get invalid json message in topic
-            
-        spring.cloud.stream.kafka.streams.binder.deserializationExceptionHandler
-        can have 3 values
-        logAndFail (default behaviour)
-        logAndContinue
-        sendToDlq (need to configure the topic name)
-        spring:
-          cloud:
-            stream:
-              kafka:
-                streams:
-                  binder:
-                    broker:
-                      bindings:
-                        input-channel-1:
-                          consumer:
-                            valueserde:
-                              dlqname: topic-1-dlq
-        
   
 

@@ -3,17 +3,13 @@ spring:
     stream:
       bindings:
         notification-input-channel:
-          destination: pos-topic
+          destination: avro-pos-topic
         notification-output-channel:
-          destination: loyalty-topic
+          destination: loyalty-topic-json
         hadoop-input-channel:
-          destination: pos-topic
+          destination: avro-pos-topic
         hadoop-output-channel:
-          destination: hadoop-sink-topic
-        shipment-input-channel:
-          destination: pos-topic
-        shipment-output-channel:
-          destination: shipment-topic
+          destination: hadoop-sink-topic-json
       kafka:
         streams:
           binder:
@@ -21,9 +17,15 @@ spring:
             configuration:
               schema.registry.url: http://localhost:8081
           bindings:
+            notification-input-channel:
+              consumer:
+                valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
             notification-output-channel:
               producer:
+                valueSerde: io.confluent.kafka.streams.serdes.json.KafkaJsonSchemaSerde
+            hadoop-input-channel:
+              consumer:
                 valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
             hadoop-output-channel:
               producer:
-                valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+                valueSerde: io.confluent.kafka.streams.serdes.json.KafkaJsonSchemaSerde

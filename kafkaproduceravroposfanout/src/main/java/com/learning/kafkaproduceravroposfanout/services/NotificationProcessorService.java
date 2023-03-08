@@ -1,8 +1,9 @@
-package com.learning.kafkaproducerposfanout.services;
+package com.learning.kafkaproduceravroposfanout.services;
 
-import com.learning.kafkaproducerposfanout.bindings.PosListenerBindings;
-import com.learning.kafkaproducerposfanout.model.Notification;
-import com.learning.kafkaproducerposfanout.model.PosInvoice;
+
+import com.learning.kafkaproduceravro.model.PosInvoice;
+import com.learning.kafkaproduceravroposfanout.bindings.PosListenerBindings;
+import com.learning.kafkaproduceravroposfanout.model.Notification;
 import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.beans.factory.annotation.Autowired;

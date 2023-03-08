@@ -1,7 +1,7 @@
-package com.learning.kafkaproducerposfanout.bindings;
+package com.learning.kafkaproduceravroposfanout.bindings;
 
-import com.learning.kafkaproducerposfanout.model.Notification;
-import com.learning.kafkaproducerposfanout.model.PosInvoice;
+import com.learning.kafkaproduceravro.model.PosInvoice;
+import com.learning.kafkaproduceravroposfanout.model.Notification;
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
@@ -15,10 +15,5 @@ public interface PosListenerBindings {
     KStream<String, PosInvoice> hadoopInputStream();
     @Output("hadoop-output-channel")
     KStream<String, Notification> hadoopOutputStream();
-
-    @Input("shipment-input-channel")
-    KStream<String, PosInvoice> shipmentInputStream();
-    @Output("shipment-output-channel")
-    KStream<String, Notification> shipmentOutputStream();
 
 }

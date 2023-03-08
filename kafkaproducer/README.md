@@ -52,10 +52,10 @@ This application uses Spring Cloud Stream with kafka stream for publishing and s
         http://localhost:9021
         it will show the running cluster
     9. Create kafka topic
-        kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic users
+        kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic pos-topic
     10. Send Messages to kafka Topic
-        kafka-console-producer --broker-list localhost:9092 --topic users
-        kafka-console-consumer --bootstrap-server localhost:9092 --topic users --from-beginning --property print.key=true --property key.seperator=":"
+        kafka-console-producer --broker-list localhost:9092 --topic pos-topic
+        kafka-console-consumer --bootstrap-server localhost:9092 --topic pos-topic --from-beginning --property print.key=true --property key.seperator=":"
     11. kafka is running on the ubuntu machine, everytime windows start ubuntu machine ip address is dynamic
         So, need below proxy command to get it connected via localhost
         netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.25.149.11

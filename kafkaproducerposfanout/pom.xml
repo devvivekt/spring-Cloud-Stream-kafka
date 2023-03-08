@@ -8,11 +8,11 @@
 		<version>2.7.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.learning.kafkaproducer.avro</groupId>
-	<artifactId>kafkaproduceravro</artifactId>
+	<groupId>com.learning.kafkaproducer.posfanout</groupId>
+	<artifactId>kafkaproducerposfanout</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafkaproduceravro</name>
-	<description>Spring Kafka Producer Avro Demo</description>
+	<name>kafkaproducerposfanout</name>
+	<description>Spring Kafka Producer for pos fanout from incoming json message</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
@@ -20,12 +20,28 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream-binder-kafka-streams</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-streams-avro-serde</artifactId>
+			<version>6.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-streams-json-schema-serde</artifactId>
+			<version>6.0.0</version>
 		</dependency>
 
 		<dependency>
@@ -38,11 +54,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream</artifactId>
 			<scope>test</scope>
+			<classifier>test-binder</classifier>
+			<type>test-jar</type>
 		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -53,12 +73,7 @@
 			<artifactId>avro</artifactId>
 			<version>1.9.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
-		<dependency>
-			<groupId>io.confluent</groupId>
-			<artifactId>kafka-avro-serializer</artifactId>
-			<version>6.0.0</version>
-		</dependency>
+
 
 	</dependencies>
 	<dependencyManagement>
@@ -104,11 +119,7 @@
 						</goals>
 						<configuration>
 							<sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
-							<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-							<imports>
-								<import>${project.basedir}/src/main/resources/avro/LineItem.avsc</import>
-								<import>${project.basedir}/src/main/resources/avro/DeliveryAddress.avsc</import>
-							</imports>
+							<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
 							<stringType>String</stringType>
 						</configuration>
 					</execution>

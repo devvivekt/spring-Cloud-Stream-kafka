@@ -4,6 +4,8 @@ spring:
       bindings:
         invoice-input-channel:
           destination: simple-invoice-topic
+        click-input-channel:
+          destination: user-clicks-topic
       kafka:
         streams:
           binder:
@@ -20,3 +22,6 @@ spring:
             invoice-input-channel:
               consumer:
                 timestampExtractorBeanName: invoiceTimesExtractor
+            click-input-channel:
+              consumer:
+                timestampExtractorBeanName: userClickTimeExtractor

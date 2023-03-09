@@ -21,9 +21,9 @@ public class InvoiceListenerService {
 
 
 
-    //for using timewindow of fixed duration 5 misn
+    //for using timewindow of fixed duration 5 misn , tumbling window, fixed size, no overlap, no gap
     @StreamListener("invoice-input-channel")
-    public void process(KStream<String, SimpleInvoice> input){
+    public void processTumblingWindow(KStream<String, SimpleInvoice> input){
         input.peek((k,v) -> log.info("Key: {} , Created Time: {}",k
                 , Instant.ofEpochMilli(v.getCreatedTime()).atOffset(ZoneOffset.UTC)))
                 .groupByKey()
@@ -37,8 +37,25 @@ public class InvoiceListenerService {
                         , v
                         , k.window().hashCode()
                 ));
-                    }
+    }
 
 
+    @StreamListener("invoice-input-channel")
+    public void processHoppingWindow(KStream<String, SimpleInvoice> input){
+        input.peek((k,v) -> log.info("Key: {} , Created Time: {}",k
+                        , Instant.ofEpochMilli(v.getCreatedTime()).atOffset(ZoneOffset.UTC)))
+                .groupByKey()
+                .windowedBy(TimeWindows.of(Duration.ofMinutes(5))
+                        .advanceBy(Duration.ofMinutes(1)))
+                .count()
+                .toStream()
+                .foreach((k,v) -> log.info("StoreId: {} , Window Start: {}, Window End: {} , count: {} , hashcode: {}"
+                        , k.key()
+                        , Instant.ofEpochMilli(k.window().start()).atOffset(ZoneOffset.UTC)
+                        , Instant.ofEpochMilli(k.window().end()).atOffset(ZoneOffset.UTC)
+                        , v
+                        , k.window().hashCode()
+                ));
+    }
 
 }

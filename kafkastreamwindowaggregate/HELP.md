@@ -67,6 +67,11 @@ The following guides illustrate how to use some features concretely:
 
 Invoice Count by 5 mins window
 
+* Tumbling Window
+    fixed in size, no overlap, no gap, kafka internally indetifies the start time, using stream first event , kafka guess start time
+* Hopping window
+    fixed size, overlapping window, no gaps 
+  
 
 
   

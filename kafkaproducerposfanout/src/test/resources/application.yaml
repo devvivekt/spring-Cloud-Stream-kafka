@@ -19,9 +19,9 @@ spring:
       kafka:
         streams:
           binder:
-            brokers: localhost:9092
+            brokers: ${spring.embedded.kafka.brokers}
             configuration:
-              schema.registry.url: http://localhost:8081
+              schema.registry.url: ${spring.embedded.kafka.brokers}
           bindings:
             notification-out-0:
               producer:

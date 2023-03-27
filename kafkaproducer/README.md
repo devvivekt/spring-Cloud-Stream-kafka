@@ -58,7 +58,7 @@ This application uses Spring Cloud Stream with kafka stream for publishing and s
         kafka-console-consumer --bootstrap-server localhost:9092 --topic pos-topic --from-beginning --property print.key=true --property key.seperator=":"
     11. kafka is running on the ubuntu machine, everytime windows start ubuntu machine ip address is dynamic
         So, need below proxy command to get it connected via localhost
-        netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.25.149.11
+        netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.26.157.169
     12. kafka has 2 kind of apis, kafka client api and kafkaa stream api
         kafka stream is used only in case of aggregating, summarizing, windowing, and send summarized results to another topic
         kafka stream offers standard data transformation using 2 major abstraction KStream and KTable

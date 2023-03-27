@@ -1,7 +1,7 @@
 spring:
   kafka:
     producer:
-      client-id: rest-producer-json
+      client-id: pos-producer-json
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

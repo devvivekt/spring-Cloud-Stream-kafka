@@ -18,7 +18,7 @@ public class KafkaProducerService {
     KafkaTemplate<String, PosInvoice> template;
 
     public void sendMessage(PosInvoice posInvoice){
-        log.info(String.format("Producing Invoice Numner %s",posInvoice.getInvoiceNumber()));
+        log.info(String.format("Producing Invoice Number %s",posInvoice.getInvoiceNumber()));
         template.send(TOPIC_NAME,posInvoice.getStoreID(),posInvoice);
     }
 }
